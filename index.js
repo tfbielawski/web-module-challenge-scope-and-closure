@@ -120,12 +120,13 @@ function inning()
   //Math.random creates the random number between 1 & 3
   //Math.floor ensures the answer is rounded to a whole number
   //Random() * 3 makes range: 0,1,2. Adding +1 makes range 0,1,2,3
-  const nunPoints = Math.floor(Math.random() * 3) + 1;
+  const numPoints = Math.floor(Math.random() * 3) + 1;
 
   //Return the random number
   return numPoints;
 }
 
+//Call and print the function results
 console.log(inning());
 
 
@@ -143,16 +144,21 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+//Define the function
+function finalScore(callFunk, numInnings)
+{
+    //In the return statement, declare Home and Away as objects
+    //Each object instantiated with inning() function
+    return { Home: inning(), Away: inning() };
 }
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
+function getInningScore(callFunk) {
   /*Your Code Here */
 }
 
