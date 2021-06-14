@@ -145,11 +145,19 @@ Use the finalScore function below to do the following:
 */ 
 
 //Define the function
-function finalScore(callFunk, numInnings)
+function finalScore(innings, numInnings)
 {
-    //In the return statement, declare Home and Away as objects
-    //Each object instantiated with inning() function
-    return { Home: inning(), Away: inning() };
+  //Declare and initialize variables to hold scores
+  let homeTeam, awayTeam = 0;
+
+  //For loop to iterate and assign values
+  for (let i = 0; i <= numInnings; i++)
+  {
+    homeTeam += innings(), awayTeam += innings();
+  }
+    
+  //Return the object
+  return { Home: homeTeam, Away: awayTeam };
 }
 
 
