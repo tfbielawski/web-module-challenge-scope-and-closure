@@ -113,10 +113,20 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
+//Define the function
 function inning()
 {
-    
+  //Declare numPoints to hold the random number
+  //Math.random creates the random number between 1 & 3
+  //Math.floor ensures the answer is rounded to a whole number
+  //Random() * 3 makes range: 0,1,2. Adding +1 makes range 0,1,2,3
+  const nunPoints = Math.floor(Math.random() * 3) + 1;
+
+  //Return the random number
+  return numPoints;
 }
+
+console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
