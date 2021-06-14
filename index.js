@@ -49,11 +49,28 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  counter1 is a variable that holds the counterMaker() function. counterMaker() function
+  calls a nested function called counter() which increments the variable count. It is a 
+  higher-order function that receives another function.
+
+  counter2() declares count as a global variable and attempts to increment count.
+  It is a lower order function.
+
   2. Which of the two uses a closure? How can you tell?
-  
+  counter1() uses closure.  
+
+  counter1 uses closure when counter() reaches out to counterMaker() to access
+  the variable count.
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter1 is preferable because it declares and initializes count within the
+     function rather than doing so globally. 
+     counter2 might be better in cases where the devs make a deliberate choice to
+     declare and initialize counter globally so it can be accessed outside the 
+     function(not best practice.).
+
+
 */
 
 // counter1 defined, no parameters
@@ -74,10 +91,10 @@ function counterMaker()
 const counter1 = counterMaker();
 
 // counter2
-//Declare initialize count
+//Declare and initialize count
 let count = 0;
 
-//Define counter()
+//Define the function counter2()
 function counter2() 
 {
   //counter2() increments and returns count
@@ -87,15 +104,18 @@ function counter2()
 
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
-  1. Return a random whole number of points between 0 and 2 scored by one team in an inning
+  1. Return a random whole number of points between 0 and 2 scored by one team in 
+  an inning
   
-  For example: invoking inning() should return a numerical score value of 0, 1, or 2
+  For example: invoking inning() should return a numerical score 
+  value of 0, 1, or 2
   
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning()
+{
+    
 }
 
 
