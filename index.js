@@ -20,9 +20,23 @@
  * It returns the string `foofoo`
 */
 
-function processFirstItem(stringList, callback) {
+//Define the function, accept parameters stringList and callback()
+function processFirstItem(stringList, callback) 
+{
+  //Return callback stringList array at index 0
   return callback(stringList[0])
 }
+
+/*Call and print the function. Pass in foo and bar as arguments; 
+pass in a callback function "str" which returns str+str
+JS sees that two items are being passed into one variable and makes stringList
+into an array. 
+
+Passing function(str) as an argument places it in the callback parameter,
+making it accessible in the return statement. 
+
+processFirstItem() triggers callback() which returns foo. Callback taks foo (str)
+and concatenates it without spaces so we get "foofoo" */
 console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
 // ⭐️ Example Challenge END ⭐️
@@ -42,20 +56,31 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
      counter2 be better?  
 */
 
-// counter1 code
-function counterMaker() {
+// counter1 defined, no parameters
+function counterMaker() 
+{
+  //Declare and initialize count
   let count = 0;
-  return function counter() {
-   return count++;
+
+  //return counter()
+  return function counter() 
+  {
+    //Counter() increments and returns count
+    return count++;
   }
 }
 
+//Declare counter1 and initialize it with the counterMaker() function
 const counter1 = counterMaker();
 
-// counter2 code
+// counter2
+//Declare initialize count
 let count = 0;
 
-function counter2() {
+//Define counter()
+function counter2() 
+{
+  //counter2() increments and returns count
   return count++;
 }
 
