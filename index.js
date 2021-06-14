@@ -1,3 +1,10 @@
+/* Thomas Bielawski
+** Lambda School Cohort: WEB45
+** index.js
+** Unit 1 Module 3 Week 1: scope & closure
+** 6/14/2021
+*/
+
 // ⭐️ Example Challenge START ⭐️
 
 /**Example Task : processFirstItem()
