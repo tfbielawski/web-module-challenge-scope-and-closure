@@ -148,15 +148,17 @@ Use the finalScore function below to do the following:
 function finalScore(innings, numInnings)
 {
   //Declare and initialize variables to hold scores
-  let homeTeam, awayTeam = 0;
+  let homeTeam = 0;
+  let awayTeam = 0;
 
   //For loop to iterate and assign values
   for (let i = 0; i <= numInnings; i++)
   {
-    homeTeam += innings(), awayTeam += innings();
+    homeTeam += innings(); 
+    awayTeam += innings();
   }
     
-  //Return the object
+  //Return the
   return { Home: homeTeam, Away: awayTeam };
 }
 
@@ -166,9 +168,12 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(callFunk) {
-  /*Your Code Here */
-}
+  //Define the function, pass in inning()
+  function getInningScore(inning) 
+  {
+    //Return the object
+    return { Home : inning(), Away : inning(), }  
+  }
 
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
@@ -212,10 +217,40 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+//Define the function
+function scoreboard(finalScore, inning, numInnings)
+{
+  //Declare the team variables and initialize
+  let homesTeam = 0;
+  let awaysTeam = 0;
 
+  //Declare an array to hold the inning stats
+  let theBigGame = [];
+
+  //For loop to iterate
+  for (let i = 1; i <= numInnings; i++)
+  {
+    //Set the inning and score
+    homesTeam = finalScore(inning, i).Home;
+    awaysTeam = finalScore(inning, i).Away;
+
+    //Display each inning and the score
+    console.log("Inning ${i}: Away ${away} - Home ${home}");
+
+    //Push the inning stats into the array
+    theBigGame.push(`Inning ${i}: Away ${away} - Home ${home}`);
+  }
+
+  //If there is a tie
+  if (away == home)
+  { 
+    //Print this
+    return "This game will require extra innings: ${away} - ${home}"
+  }
+
+  //Return the array containing the inning stats
+  return theBigGame;
+}
 
 
 
