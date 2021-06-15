@@ -118,7 +118,7 @@ function inning()
   //Math.random creates the random number between 1 & 3
   //Math.floor ensures the answer is rounded to a whole number
   //Random() * 3 makes range: 0,1,2. Adding +1 makes range 0,1,2,3
-  const numPoints = Math.floor(Math.random() * 3) + 1;
+  const numPoints = Math.floor(Math.random() * 3);
 
   //Return the random number
   return numPoints;
