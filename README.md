@@ -43,11 +43,15 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+Closure occurs when a javascript function calls another function, and it happens at the the low-level function reaches outside of itself to access variables in the higher-level function. When the function completes, the variables are no longer accessible.
+
 2. Study the following code, then answer the questions below.
 
 ```js
-function personalDice(name){
-  return function(){
+function personalDice(name)
+{
+  return function()
+  {
       // generate random number between 1 and 6
     const newRoll = Math.floor(Math.random() * 6);
     console.log(`${name} rolled a ${newRoll}`)
@@ -64,9 +68,14 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+Closure occurs in function() when consol.log reaches out to personalDice to get name
 
+
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+Name (Dan) remains the same for each function invocation, while the number rolled changes for each function invocation. This is because dansRoll passes the argument "Dan" for each function invocation, but the random number generator is called to provide the number rolled each time.
+
+c. What is the lexical scope of `newRoll`? 
+Lexical scope means that the child has access to variables defined in the parent. newRoll has no children, but it resides within function() which resides within personalDice(). So, newRoll should have access to variables in both function() and personalDice(). 
 
 ### Task 3 - Stretch Goals
 
@@ -83,6 +92,11 @@ addSix(21); // returns 27
 ```
 
 2. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
+
+Functional programming focuses on functions, methods, and variables. Functional programming is easier to work with. Objects in functional programming are not mutable once they are created. Functional programming code is easier to manage and maintain.
+
+Object oriented programming focuses on using classes. Classes are a way to encapsulate code for reuse, for data protection, for streamlining code, 
+OOP focuses on classes, objects, attributes, and methods. Class objects can hold a great deal of data, they can pass attributes to child classes, and they can manipulate or change the data in their structures (through methods). OOJ is more complicated than functional programming and more difficult to maintain, but offers a greater power to the developers.
 
 ## Resources
 

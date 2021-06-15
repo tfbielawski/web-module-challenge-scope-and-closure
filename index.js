@@ -57,18 +57,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   It is a lower order function.
 
   2. Which of the two uses a closure? How can you tell?
-  counter1() uses closure.  
-
   counter1 uses closure when counter() reaches out to counterMaker() to access
   the variable count.
 
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
-     counter1 is preferable because it declares and initializes count within the
-     function rather than doing so globally. 
-     counter2 might be better in cases where the devs make a deliberate choice to
-     declare and initialize counter globally so it can be accessed outside the 
-     function(not best practice.).
+  counter2 be better?  
+  counter1 is preferable because it declares and initializes count within the
+  function rather than doing so globally. 
+  counter2 might be better in cases where the devs make a deliberate choice to
+  declare and initialize counter globally so it can be accessed outside the 
+  function(not best practice.).
 
 
 */
